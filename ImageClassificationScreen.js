@@ -14,7 +14,6 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import * as ImagePicker from "expo-image-picker";
 import * as ImageManipulator from "expo-image-manipulator";
 import axios from "axios";
-
 library.add(faImage, faCamera);
 
 const ImageClassificationScreen = () => {
