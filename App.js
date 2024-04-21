@@ -1,20 +1,35 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { ImageBackground, StyleSheet, Text } from "react-native";
+import ImageClassificationScreen from "./ImageClassificationScreen";
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ImageBackground
+      source={require("./assets/background.jpg")}
+      style={styles.background}
+      resizeMode="cover"
+      blurRadius={10}
+    >
+      <Text style={styles.title}>{"Potato Disease \nPrediction App"}</Text>
+      <ImageClassificationScreen />
+    </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
-  container: {
+  background: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    resizeMode: "cover",
+    justifyContent: "center",
+  },
+  title: {
+    alignSelf: "center",
+    position: "absolute",
+    top: 55,
+    fontSize: 28,
+    fontWeight: "bold",
+    color: "#FFF",
   },
 });
+
+export default App;
